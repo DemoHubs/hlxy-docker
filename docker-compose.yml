@@ -1,0 +1,26 @@
+hlxy-eureka:
+  image: dh/hlxy-eureka
+  ports:
+   - "3000:3000"
+
+hlxy-api:
+  image: dh/hlxy-api
+  ports:
+   - "3111:3111"
+  links:
+   - 'hlxy-eureka'
+   - 'hlxy-user'
+   - 'hlxy-order'
+hlxy-user:
+  image: dh/hlxy-user
+  ports:
+   - "3333:3333"
+  links:
+   - 'hlxy-eureka'
+
+hlxy-order:
+  image: dh/hlxy-order
+  ports:
+   - "3334:3334"
+  links:
+   - 'hlxy-eureka'

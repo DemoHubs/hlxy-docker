@@ -10,7 +10,7 @@ eureka:
     hostname: hlxy-api
   client:
     serviceUrl:
-      defaultZone: http://dh-registry-eureka:3000/eureka/
+      defaultZone: http://hlxy-eureka:3000/eureka/
 
 #zuul相关
 

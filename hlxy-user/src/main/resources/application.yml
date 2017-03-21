@@ -10,6 +10,6 @@ eureka:
     hostname: hlxy-user
   client:
     serviceUrl:
-      defaultZone: http://dh-registry-eureka:3000/eureka/
+      defaultZone: http://hlxy-eureka:3000/eureka/
 
 
