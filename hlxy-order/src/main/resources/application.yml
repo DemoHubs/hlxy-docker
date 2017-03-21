@@ -1,0 +1,15 @@
+spring:
+    application:
+        name: hlxy-order
+
+server:
+  port: 3334
+
+eureka:
+  instance:
+    hostname: hlxy-order
+  client:
+    serviceUrl:
+      defaultZone: http://dh-registry-eureka:3000/eureka/
+
+

@@ -1,0 +1,15 @@
+spring:
+    application:
+        name: registry-eureka
+
+server:
+  port: 3000
+
+eureka:
+  instance:
+    hostname: registry-eureka
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

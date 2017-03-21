@@ -1,0 +1,25 @@
+spring:
+    application:
+        name: hlxy-api
+
+server:
+  port: 3111
+
+eureka:
+  instance:
+    hostname: hlxy-api
+  client:
+    serviceUrl:
+      defaultZone: http://dh-registry-eureka:3000/eureka/
+
+#zuul相关
+
+zuul:
+  routes:
+    user:
+      path: /user/**
+      service-id: dh-user-service
+    order:
+      path: /order/**
+      service-id: dh-order-service
+
