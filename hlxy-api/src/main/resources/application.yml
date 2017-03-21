@@ -18,8 +18,8 @@ zuul:
   routes:
     user:
       path: /user/**
-      service-id: dh-user-service
+      service-id: hlxy-user
     order:
       path: /order/**
-      service-id: dh-order-service
+      service-id: hlxy-order
 
