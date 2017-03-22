@@ -31,3 +31,6 @@ hlxy-admin:
    - "3444:3444"
   links:
    - 'hlxy-eureka'
+   - 'hlxy-user'
+   - 'hlxy-order'
+   - 'hlxy-api'
