@@ -3,6 +3,7 @@ package com.hlxy.order.api;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Maps;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
-import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -33,6 +33,7 @@ public class OrderController {
     private Map<String,Map<String,Object>> cache= Maps.newConcurrentMap();
     private AtomicInteger orderNo=new AtomicInteger(0);
     @RequestMapping(value = "/add" ,method = RequestMethod.GET)
+    @HystrixCommand
     public String add(@RequestParam String name) {
         ServiceInstance instance = client.getLocalServiceInstance();
         if(cache.containsKey(name)){
@@ -47,6 +48,7 @@ public class OrderController {
         cache.put(name,o);
         return getJSON(cache.get(name));
     }
+    @HystrixCommand
     @RequestMapping(value = "/get" ,method = RequestMethod.GET)
     public String get(@RequestParam String name) {
         ServiceInstance instance = client.getLocalServiceInstance();

@@ -1,7 +1,11 @@
 spring:
     application:
         name: hlxy-admin
-
+    boot:
+      admin:
+        turbine:
+          #clusters: default
+          url: http://hlxy-hystrix:3555/turbine.stream
 server:
   port: 3444
 
@@ -14,6 +18,8 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://hlxy-eureka:3000/eureka/
+
+
 
 
 

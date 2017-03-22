@@ -1,6 +1,7 @@
 package com.hlxy.user;
 
 import com.google.common.collect.Maps;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -28,6 +29,7 @@ public class UserController {
     private Map<String,String> cache= Maps.newConcurrentMap();
 
     @RequestMapping(value = "/add" ,method = RequestMethod.GET)
+    @HystrixCommand(fallbackMethod="fff")
     public String add(@RequestParam String name) {
         ServiceInstance instance = client.getLocalServiceInstance();
         if(cache.containsKey(name)){
@@ -38,6 +40,11 @@ public class UserController {
         cache.put(name, Objects.toString(System.currentTimeMillis()));
         return String.format("cuurent user:%s ,id:%s",name,cache.get(name));
     }
+    public String fff(String name){
+        System.out.println(name);
+        return "error";
+    }
+    @HystrixCommand
     @RequestMapping(value = "/get" ,method = RequestMethod.GET)
     public String get(@RequestParam String name) {
         ServiceInstance instance = client.getLocalServiceInstance();

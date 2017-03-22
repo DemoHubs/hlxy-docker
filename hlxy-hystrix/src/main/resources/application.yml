@@ -22,7 +22,13 @@ eureka:
       defaultZone: http://hlxy-eureka:3000/eureka/
 
 turbine:
-  aggregator:
-    clusterConfig: HLXY
+ # aggregator:
+ #   clusterConfig: MAIN
   appConfig: hlxy-user,hlxy-order
-  clusterNameExpression: metadata['cluster']
+  #clusterNameExpression: metadata['cluster']
+  clusterNameExpression: new String('default')
+  combineHostPort: true
+  InstanceMonitor:
+    eventStream:
+      skipLineLogic:
+        enabled: false

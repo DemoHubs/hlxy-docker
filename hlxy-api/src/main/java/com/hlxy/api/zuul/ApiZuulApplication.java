@@ -3,6 +3,7 @@ package com.hlxy.api.zuul;
 import com.hlxy.api.zuul.filter.AccessFilter;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.SpringCloudApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
 
@@ -14,6 +15,7 @@ import org.springframework.context.annotation.Bean;
  * <p>Created by Tao xs on 2017/3/21.</p>
  */
 @EnableZuulProxy
+@EnableCircuitBreaker
 @SpringCloudApplication
 public class ApiZuulApplication {
     public static void main(String[] args) {
