@@ -1,0 +1,17 @@
+spring:
+    application:
+        name: hlxy-admin
+
+server:
+  port: 3444
+
+eureka:
+  instance:
+    hostname: hlxy-admin
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://hlxy-eureka:3000/eureka/
+
+
+

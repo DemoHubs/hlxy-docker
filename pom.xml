@@ -10,7 +10,7 @@
     <module>hlxy-user</module>
     <module>hlxy-eureka</module>
     <module>hlxy-order</module>
-      <!--<module>hlxy-admin</module>-->
+      <module>hlxy-admin</module>
   </modules>
   <packaging>pom</packaging>
 
