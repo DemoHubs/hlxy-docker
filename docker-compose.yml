@@ -13,7 +13,6 @@ hlxy-api:
    - 'hlxy-eureka'
    - 'hlxy-user'
    - 'hlxy-order'
-   - 'hlxy-order2'
 hlxy-user:
   image: dh/hlxy-user
   hostname: hlxy-user
