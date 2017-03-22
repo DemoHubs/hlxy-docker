@@ -24,3 +24,10 @@ hlxy-order:
    - "3334:3334"
   links:
    - 'hlxy-eureka'
+
+hlxy-order:
+  image: dh/hlxy-admin
+  ports:
+   - "3444:3444"
+  links:
+   - 'hlxy-eureka'
