@@ -10,6 +10,8 @@ eureka:
     hostname: hlxy-admin
     prefer-ip-address: true
   client:
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
       defaultZone: http://hlxy-eureka:3000/eureka/
 
