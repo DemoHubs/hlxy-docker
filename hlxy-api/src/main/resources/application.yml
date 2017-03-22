@@ -1,6 +1,11 @@
 spring:
     application:
         name: hlxy-api
+    cloud:
+    #负载均衡
+      loadbalancer:
+        retry:
+          enabled: true
 
 server:
   port: 3111
@@ -22,4 +27,4 @@ zuul:
     order:
       path: /order/**
       service-id: hlxy-order
-
+#hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000

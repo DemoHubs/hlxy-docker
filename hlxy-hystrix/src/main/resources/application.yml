@@ -1,0 +1,28 @@
+spring:
+    application:
+        name: hlxy-hystrix
+    cloud:
+    #负载均衡
+      loadbalancer:
+        retry:
+          enabled: true
+
+server:
+  port: 3555
+
+
+eureka:
+  instance:
+    hostname: hlxy-hystrix
+    leaseRenewalIntervalInSeconds: 10
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://hlxy-eureka:3000/eureka/
+
+turbine:
+  aggregator:
+    clusterConfig: HLXY
+  appConfig: hlxy-user,hlxy-order
+  clusterNameExpression: metadata['cluster']
