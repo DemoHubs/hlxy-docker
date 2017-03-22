@@ -8,7 +8,7 @@ server:
 eureka:
   instance:
     hostname: hlxy-admin
-    prefer-ip-address: true
+   # prefer-ip-address: true
   client:
     registerWithEureka: true
     fetchRegistry: true
