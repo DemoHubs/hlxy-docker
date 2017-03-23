@@ -12,6 +12,7 @@
     <module>hlxy-order</module>
       <module>hlxy-admin</module>
     <module>hlxy-hystrix</module>
+    <module>hlxy-sleuth</module>
   </modules>
   <packaging>pom</packaging>
 

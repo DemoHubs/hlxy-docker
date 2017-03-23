@@ -1,6 +1,8 @@
 package com.hlxy.user;
 
 import com.google.common.collect.Maps;
+import com.hlxy.service.OrderService;
+import com.hlxy.service.OrderServiceHystrix;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,8 @@ public class UserController {
     private final Logger logger = Logger.getLogger(getClass());
     @Autowired
     private DiscoveryClient client;
+    @Autowired
+    private OrderServiceHystrix orderService;
     private Map<String,String> cache= Maps.newConcurrentMap();
 
     @RequestMapping(value = "/add" ,method = RequestMethod.GET)
@@ -39,6 +43,10 @@ public class UserController {
         logger.info("/add, host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", from insert");
         cache.put(name, Objects.toString(System.currentTimeMillis()));
         return String.format("cuurent user:%s ,id:%s",name,cache.get(name));
+    }
+    @RequestMapping(value = "/orders" ,method = RequestMethod.GET)
+    public String orders(String name){
+        return orderService.get(name);
     }
     public String fff(String name){
         System.out.println(name);
