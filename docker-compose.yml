@@ -71,7 +71,7 @@ hlxy-sleuth:
    - 'hlxy-api'
    - 'hlxy-rabbitmq'
 hlxy-rabbitmq:
-  image: registry.cn-hangzhou.aliyuncs.com/taowan/rabbitmq:3.6.5
+  image: registry.cn-hangzhou.aliyuncs.com/peachyy/rabbitmq:3.6.5
   ports:
    - "15672:15672"
    - "5672:5672"
