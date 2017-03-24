@@ -21,7 +21,7 @@ hlxy-user:
    - "3333:3333"
   links:
    - 'hlxy-eureka'
-#   - 'hlxy-sleuth'
+   - 'hlxy-sleuth'
 
 hlxy-order:
   image: dh/hlxy-order
@@ -30,7 +30,7 @@ hlxy-order:
   hostname: hlxy-order
   links:
    - 'hlxy-eureka'
-#   - 'hlxy-sleuth'
+   - 'hlxy-sleuth'
 
 
 hlxy-admin:
@@ -44,7 +44,7 @@ hlxy-admin:
    - 'hlxy-order'
    - 'hlxy-api'
    - 'hlxy-hystrix'
-#   - 'hlxy-sleuth'
+   - 'hlxy-sleuth'
 
 hlxy-hystrix:
   image: dh/hlxy-hystrix
@@ -56,7 +56,7 @@ hlxy-hystrix:
    - 'hlxy-user'
    - 'hlxy-order'
    - 'hlxy-api'
-#   - 'hlxy-sleuth'
+   - 'hlxy-sleuth'
 
 hlxy-sleuth:
   image: dh/hlxy-sleuth
@@ -65,9 +65,9 @@ hlxy-sleuth:
   hostname: hlxy-sleuth
   links:
    - 'hlxy-eureka'
-   - 'hlxy-user'
-   - 'hlxy-order'
-   - 'hlxy-api'
+#   - 'hlxy-user'
+#   - 'hlxy-order'
+#   - 'hlxy-api'
 
 
 #   - 'hlxy-rabbitmq'
