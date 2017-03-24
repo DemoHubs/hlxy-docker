@@ -1,6 +1,9 @@
 spring:
     application:
         name: hlxy-order
+    zipkin:
+        base-url: http://hlxy-sleuth:3666/
+        enabled: true
 
 server:
   port: 3334

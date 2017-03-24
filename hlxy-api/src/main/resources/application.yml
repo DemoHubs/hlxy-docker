@@ -1,6 +1,9 @@
 spring:
     application:
         name: hlxy-api
+    zipkin:
+        base-url: http://hlxy-sleuth:3666/
+        enabled: true
     cloud:
     #负载均衡
       loadbalancer:
