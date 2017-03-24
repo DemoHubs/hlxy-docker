@@ -64,6 +64,7 @@ hlxy-hystrix:
    - 'hlxy-order'
    - 'hlxy-api'
    - 'hlxy-sleuth'
+
 hlxy-sleuth:
   image: dh/hlxy-sleuth
   ports:
@@ -74,6 +75,8 @@ hlxy-sleuth:
    - 'hlxy-user'
    - 'hlxy-order'
    - 'hlxy-api'
+
+
 #   - 'hlxy-rabbitmq'
 #hlxy-rabbitmq:
 #  image: registry.cn-hangzhou.aliyuncs.com/peachyy/rabbitmq:3.6.5
