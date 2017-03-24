@@ -24,6 +24,7 @@ hlxy-user:
    - 'hlxy-eureka'
    - 'hlxy-sleuth'
    - 'hlxy-order'
+   - 'hlxy-order2'
 
 hlxy-order:
   image: dh/hlxy-order
