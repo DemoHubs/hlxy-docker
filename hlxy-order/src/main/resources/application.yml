@@ -10,7 +10,7 @@ server:
 
 eureka:
   instance:
-    #hostname: hlxy-order
+    hostname: hlxy-order
   client:
     serviceUrl:
       defaultZone: http://hlxy-eureka:3000/eureka/
