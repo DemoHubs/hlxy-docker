@@ -3,7 +3,7 @@ package com.hlxy.sleuth;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.sleuth.zipkin.stream.EnableZipkinStreamServer;
+import zipkin.server.EnableZipkinServer;
 
 /**
  * <p>描述:</p>
@@ -13,7 +13,8 @@ import org.springframework.cloud.sleuth.zipkin.stream.EnableZipkinStreamServer;
  * <p>Created by Tao xs on 2017/3/23.</p>
  */
 @SpringBootApplication
-@EnableZipkinStreamServer
+@EnableZipkinServer
+//@EnableZipkinStreamServer
 @EnableDiscoveryClient
 public class SleuthApplication {
     public static void main(String[] args) {
