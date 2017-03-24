@@ -22,6 +22,7 @@ hlxy-user:
   links:
    - 'hlxy-eureka'
    - 'hlxy-sleuth'
+   - 'hlxy-order'
 
 hlxy-order:
   image: dh/hlxy-order
