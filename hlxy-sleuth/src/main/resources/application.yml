@@ -1,6 +1,13 @@
 spring:
     application:
         name: hlxy-sleuth
+    rabbitmq:
+      password: guest
+      username: guest
+      virtual-host: hlxy-sleuth
+      port: 5672
+      host: hlxy-rabbitmq
+
 
 server:
   port: 3666
@@ -11,5 +18,7 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://hlxy-eureka:3000/eureka/
+
+
 
 
