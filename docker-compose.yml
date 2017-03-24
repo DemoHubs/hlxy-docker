@@ -14,7 +14,7 @@ hlxy-api:
    - 'hlxy-user'
    - 'hlxy-order'
    - 'hlxy-sleuth'
-   - 'hlxy-order2'
+ #  - 'hlxy-order2'
 hlxy-user:
   image: dh/hlxy-user
   hostname: hlxy-user
@@ -24,7 +24,7 @@ hlxy-user:
    - 'hlxy-eureka'
    - 'hlxy-sleuth'
    - 'hlxy-order'
-   - 'hlxy-order2'
+#   - 'hlxy-order2'
 
 hlxy-order:
   image: dh/hlxy-order
@@ -35,14 +35,14 @@ hlxy-order:
    - 'hlxy-eureka'
    - 'hlxy-sleuth'
 
-hlxy-order2:
-  image: dh/hlxy-order
-  ports:
-   - "3335:3334"
-  hostname: hlxy-order2
-  links:
-   - 'hlxy-eureka'
-   - 'hlxy-sleuth'
+#hlxy-order2:
+#  image: dh/hlxy-order
+#  ports:
+#   - "3335:3334"
+#  hostname: hlxy-order2
+#  links:
+#   - 'hlxy-eureka'
+#   - 'hlxy-sleuth'
 
 hlxy-admin:
   image: dh/hlxy-admin
